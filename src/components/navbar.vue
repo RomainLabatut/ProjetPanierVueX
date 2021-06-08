@@ -18,7 +18,7 @@
 export default {
 
      methods:{
-         increment: function(){
+     increment: function(){
              this.$store.commit('updatePanier')
          }
      },
