@@ -6,7 +6,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.price }}</p>
-                <a href="#" v-on:click="increment" class="btn btn-primary">Ajouter au panier</a>
+                <a href="#" v-on:click="increment(product.id)" class="btn btn-primary">Ajouter au panier</a>
             </div>
         </div>
     </div>
@@ -18,8 +18,11 @@
 
 export default {
   methods:{
-    increment: function(){
-      this.$store.commit('updatePanier')
+    increment: function(chaussure){
+      this.$store.commit('updatePanier',chaussure)
+    },
+    addToCard: function(){
+      this.$store.dispatch('updatePanier')
     }
   },
   computed:{
